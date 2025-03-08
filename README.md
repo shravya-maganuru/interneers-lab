@@ -46,7 +46,7 @@ Welcome to the **Interneers Lab 2025** repository! This serves as a minimal star
 2. **Configure Git** with your name and email:
    ```bash
    git config --global user.name "Your Name"
-   git config --global user.email "your.email@example.com"
+   git config --global user.email "your.email@example.com" # Use the same email you shared during onboarding
 3. What is Forking?
 
    Forking a repository on GitHub creates your own copy under your GitHub account, where you can make changes independently without affecting the original repo. Later, you can make pull requests to merge changes back if needed.
@@ -398,6 +398,7 @@ python manage.py test
 ```
 docker compose ps
 ```
+Note: This command displays the status of the containers, including whether they are running, their assigned ports, and their names, as defined in the docker-compose.yaml file. If you have set up a MongoDB server using Docker and connected it to your Django application, you can use this command to verify that the MongoDB container is running properly.
 
 ---
 
