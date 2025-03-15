@@ -427,3 +427,63 @@ Head over to the frontend README to check it out:
 
 ---
 
+
+## Week 1: Additional Test Scenarios
+
+Additional related parameters namely, age and language were added to the exposed API.
+
+## API Reference
+
+#### Get all items
+
+| Parameter | Type | Required| Description|
+| :-------- | :------- | :----- |:-------------- |
+| `name` | `string` | `Optional`| `User's Name (default: "World")` |
+|`age`|`integer`|`Optional`| `User's Age (default: unknown)` |
+|`language`|`string`|`Optional`|`Preferred language (default: English)`|
+
+#### Basic Request
+
+```http
+    GET /hello/
+```
+
+#### Response
+```json
+{
+   "message": "Hello, World!"
+   "Age": "Your age is unknown."
+   "Language": "Preferred language: English" 
+}
+```
+
+### Error Handling
+
+The API validates input and returns error messages for invalid data.
+
+##### Invalid Age
+```http
+  GET /hello/?age=abc
+```
+or
+```http
+  GET /hello/?age=-10
+```
+#### Response (400 Bad Request):
+
+```json
+{
+    "error": "Invalid age format. Age must be a positive number."
+}
+```
+
+##### Invalid Language
+```http
+  GET /hello/?language=xyz123
+```
+
+```json
+{
+    "error": "Invalid language. Allowed values: English, German, Spanish, Hindi."
+}
+```
