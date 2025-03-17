@@ -451,8 +451,8 @@ Additional related parameters namely, age and language were added to the exposed
 #### Response
 ```json
 {
-   "message": "Hello, World!"
-   "Age": "Your age is unknown."
+   "message": "Hello, World!",
+   "Age": "Your age is unknown.",
    "Language": "Preferred language: English" 
 }
 ```
