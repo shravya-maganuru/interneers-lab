@@ -1,18 +1,8 @@
 from mongoengine import Document, StringField, DecimalField, IntField, FloatField
 from bson import ObjectId
 
-class Product(Document):
-    name = StringField(max_length=255, required=True)
-    description = StringField()
-    category = StringField(max_length=50)
-    price = FloatField(required=True)
-    brand = StringField(max_length=100)
-    quantity = IntField(min_value=0)
-
-    meta = {'collection': 'products'}  # This defines the MongoDB collection name
-
 def create_product(data):
-    """Creates a new product in MongoDB."""
+    """Defining a new MongoDB project."""
     try:
         product = Product(**data)
         product.save()
@@ -51,3 +41,7 @@ def delete_product(product_id):
         return True
     return False
 
+"""Connected with ProductCategory layer"""
+def get_products_by_category(category_id):
+    """Fetch products that belong to a given category."""
+    return Product.objects(category=category_id)

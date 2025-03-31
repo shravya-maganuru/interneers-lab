@@ -1,5 +1,5 @@
-from .product_repository import (
-    create_product, get_all_products, get_product_by_id, update_product, delete_product
+from ..Repositories.product_repository import (
+    create_product, get_all_products, get_product_by_id, update_product, delete_product, get_products_by_category
 )
 
 def add_product(data):
@@ -21,3 +21,7 @@ def modify_product(product_id, data):
 def remove_product(product_id):
     """Service function to delete a product."""
     return delete_product(product_id)
+
+def list_products_by_category(category_id):
+    """Fetch products belonging to a specific category."""
+    return get_products_by_category(category_id)
