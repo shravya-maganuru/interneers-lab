@@ -26,7 +26,7 @@ class ProductSerializer(DocumentSerializer):
 class ProductCategorySerializer(DocumentSerializer):
     
     title = serializers.CharField(max_length = 100)
-    description = serializers.StringField()
+    description = serializers.CharField()
 
     class Meta:
         model = ProductCategory

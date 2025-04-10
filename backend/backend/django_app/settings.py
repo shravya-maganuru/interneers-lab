@@ -83,14 +83,14 @@ WSGI_APPLICATION = "django_app.wsgi.application"
 #     }
 # }
 
-MONGODB_SETTINGS = {
-    "db": "Products_Database",  
-    "host": "localhost",
-    "port": 27017,
-}
-
+import sys
 from mongoengine import connect
-connect("Products_Database", host="mongodb://localhost:27017/")
+
+if 'test' in sys.argv:
+    connect("seed_test", host="mongodb://localhost:27017/")
+else:
+    connect("Products_Database", host="mongodb://localhost:27017/")
+
 
 
 # Password validation
