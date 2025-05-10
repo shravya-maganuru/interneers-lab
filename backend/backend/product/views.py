@@ -18,7 +18,7 @@ class ProductViewSet(viewsets.ViewSet):
     A viewset to handle CRUD operations for products using MongoDB.
     """
 
-    def list(self, request):
+    def list(self):
         """List all products."""
         products = list_products()
         serializer = ProductSerializer(products, many=True)

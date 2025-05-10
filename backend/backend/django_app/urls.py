@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import JsonResponse
 
+
+
 def hello_name(request):
     """
     A simple view that returns 'Hello, {name}, you are {age} years old and speak {language}' in JSON format.
@@ -26,8 +28,9 @@ def hello_name(request):
         "message": f"Hello, {name}! You are {age} years old and speak {language}."
     })
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello_name),  # Keep the hello world API
-    path('api/', include('product.urls')),  # Corrected the product API route
+    path('hello/', hello_name),  
+    path('api/', include('product.urls')),  
 ]
